@@ -36,7 +36,7 @@ const start = function () {
 		millisec = millisec < 10 ? String(millisec).padStart(2, '0') : millisec;
 		document.querySelector(
 			'.time'
-		).innerHTML = `${hour} : ${minutes} : ${sec} : ${millisec}`;
+		).textContent = `${hour} : ${minutes} : ${sec} : ${millisec}`;
 	}, 10);
 };
 
@@ -45,7 +45,7 @@ const stop = () => clearInterval(startTimer);
 const reset = () => {
 	clearInterval(startTimer);
 	[hour, minutes, sec, millisec] = [0, 0, 0, 0];
-	document.querySelector('.time').innerHTML = `00 : 00 : 00 : 00`;
+	document.querySelector('.time').textContent = `00 : 00 : 00 : 00`;
 };
 startButton.addEventListener('click', start);
 
